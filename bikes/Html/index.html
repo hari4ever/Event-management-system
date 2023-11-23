@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <title>Home page</title>
+</head>
+<link rel="stylesheet" href='{% static "css/form.css" %}'>
+
+<style>
+    body {
+        background-image: url('{% static "img/home.jpg" %}');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    
+    h1 {
+        font-size: 6rem;
+        color: orange;
+    }
+</style>
+
+
+<body>
+    <div class='container'>
+        <h1>welcome</h1><br><br>
+        <div class="container">
+            <a class='button' href="{% url 'login' %}">login</a>
+            <a class='button' href="{% url 'signup' %}">signup</a>
+        </div>
+    </div>
+</body>
+
+</html>

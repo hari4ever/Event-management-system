@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <title>login form</title>
+    <link rel="stylesheet" href='{% static "css/form.css" %}'>
+    <style>
+        body {
+            background-image: url('{% static "img/login.jpg" %}');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <a class='button ret' href="{% url 'home' %}">HOME</a>
+        <br><br><br>
+        <h1> login form
+        </h1><br><br><br><br>
+        <form action='' method='post'>
+            {% csrf_token %}
+            <input class='form' type='text' name='username' placeholder='enter the username' required> <br><br><br>
+            <input class='form' type='password' name='pass' placeholder='enter the password' required> <br><br><br>
+            <input class='button' type='submit' value='register'>
+        </form>
+    </div>
+</body>
+
+{{data|json_script:'hee'}}
+<script src='{% static "js/login.js" %}'>
+</script>
+
+</html>

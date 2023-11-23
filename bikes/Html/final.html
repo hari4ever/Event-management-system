@@ -1,0 +1,45 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>final page</title>
+    <link rel="stylesheet" href='{% static "css/form.css" %}'>
+</head>
+<style>
+    body {
+        background-image: url('{% static "img/final.jpg" %}');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    
+    .fine,
+    .kitty {
+        position: relative;
+        top: -200px;
+    }
+    
+    .anni,
+    .birth {
+        position: relative;
+        bottom: -250px;
+        left: -550px;
+    }
+    
+    a {
+        padding: 100px;
+        font-size: 2rem;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <a class="fine" href="{% url 'data' %}">marriage event </a>
+        <a class="birth" href="{% url 'data' %}"> birthday party event</a>
+        <a class="kitty" href="{% url 'data' %}">kitty party event</a>
+        <a class="anni" href="{% url 'data' %}"> Anniversary event</a>
+    </div>
+</body>
+
+</html>

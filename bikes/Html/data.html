@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href='{% static "css/form.css" %}'>
+
+<body>
+    <div class="container">
+        <h1>Register form</h1><br><br>
+        <form action="" method="post"><br> {% csrf_token %}
+            <label> enter your name </label><br>
+            <input type="text" name="name" class="form" required><br><br>
+            <label>enter your mobile number</label><br><br>
+            <input type="text" class="form" name="phno" required><br><br>
+            <label>enter email id </label><br><br>
+            <input type="email" name="email" class="form" required><br><br>
+            <label for="address"> enter your address</label><br><br>
+            <textarea type="text" name="address" required></textarea><br><br>
+            <input type="submit" value="Register" class="button">
+        </form>
+        <div>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+ {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href='{% static "css/form.css" %}'>
+    <title>SignUp form</title>
+</head>
+<style>
+    body {
+        background-image: url('{% static "img/signup.jpg" %}');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>
+
+<body>
+    <div class='container'>
+        <a class='button ret' href="{% url 'home' %}">HOME</a>
+        <br><br><br>
+        <h1> SignUp form
+            <h1>
+
+                <form action='' method='POST'><br> {% csrf_token %}
+                    <input class='form' type='email' name='email' placeholder='Enter Your email Id' required> <br>
+                    <input class='form' type='text' name='username' placeholder='Create a username' required> <br>
+                    <input class='form' type='' name='phno' placeholder='mobile no' required> <br>
+                    <input class='form' type='password' name='pass' placeholder='Create a password' required> <br>
+                    <input class='form' type='password' name='Again' placeholder='Again type password' required> <br>
+                    <input class='button' type='submit' value='Create Account'>
+                </form>
+    </div>
+
+</body>
+
+{{data|json_script:'signuppageinjs'}}
+<script>
+    var signup = document.getElementById('signuppageinjs'),
+        data_in_db = JSON.parse(signup.textContent),
+        classNodes = document.querySelectorAll('.form');
+    signup.textContent = '';
+
+
+    function doOperation(lis) {
+
+        classNodes[0].value = lis['email'];
+        classNodes[1].value = lis['username'];
+
+        for (const o of lis['mistake']) {
+            if (o == 'u') {
+                classNodes[1].style.borderColor = 'red';
+                classNodes[2].value = lis['password'];
+                classNodes[3].value = lis['password'];
+            } else if (o == 'p') {
+                classNodes[3].style.borderColor = 'red';
+                classNodes[4].style.borderColor = 'red';
+                classNodes[4].value = '';
+                classNodes[3].value = '';
+            } else if (o == 'e') {
+                classNodes[0].style.borderColor = 'red';
+            } else if (o == 'z') {
+                classNodes[2].style.borderColor = 'red';
+            }
+        }
+    }
+
+    if (data_in_db['mistake'].length != 0) {
+        doOperation(data_in_db);
+    } else
+        for (var temp of classNodes) {
+            temp.style.borderColor = 'aqua';
+            temp.value = '';
+        }
+</script>
+
+</html>

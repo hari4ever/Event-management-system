@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+
+.container {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin: 20px;
+    width: auto;
+}
+
+.form,
+.form :active,
+.form :hover,
+.form :visited {
+    width: 15rem;
+    font-size: 1rem;
+    display: block;
+    border: #000 solid 0px;
+    background-color: transparent;
+    border-bottom: rgb(43, 163, 179) solid 1px;
+    color: white;
+    font-family: monospace;
+    text-align: center;
+    outline: none;
+}
+
+.button,
+a {
+    font-size: 2.5em;
+    padding: 20px;
+    font-size: large;
+    font-family: monospace;
+    background-color: #fff;
+    color: black;
+    border-radius: 0.5rem;
+    margin-left: 2.5rem;
+    text-transform: capitalize;
+}
+
+.button:hover {
+    background-color: orange;
+    cursor: grab;
+}
+
+h1 {
+    color: orange;
+    font-size: 4rem;
+    text-align: center;
+    font-family: cursive, sans-serif;
+}
+
+.ret {
+    position: relative;
+    top: 2rem;
+    right: -35rem;
+}
+
+a:hover,
+a,
+a:visited,
+a:active {
+    outline: none;
+    text-decoration: none;
+}
